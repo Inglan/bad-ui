@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Subscription</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        font-family: "Roboto", sans-serif;
+      }
+      body,
+      html {
+        padding: 0;
+        margin: 0;
+        background-color: black;
+        height: 100%;
+      }
+
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .main {
+        background-color: #222;
+        width: 400px;
+        border-radius: 10px;
+        padding: 10px;
+      }
+
+      h1,
+      h2 {
+        padding: 0;
+        margin: 0;
+        margin-bottom: 10px;
+        color: white;
+      }
+      button {
+        width: 100%;
+        padding: 10px;
+        font-size: 20px;
+        border-radius: 10px;
+        outline: 0;
+        border: 0;
+        background-color: #333;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="main">
+      <h1>Premium plus pro</h1>
+      <h1>$6900000/month</h1>
+      <h2>Subscribed</h2>
+      <button onclick="cancel()">Cancel Subscription</button>
+    </div>
+  </body>
+  <script>
+    function cancel() {
+      document.querySelector(".main").innerHTML = `
+      <h1>Are you sure you would like to cancel your subscription</h1>
+      <button onclick="cancelcancel()" style="margin-bottom: 10px">Cancel</button>
+      <button onclick="cancelcancel()">Continue</button>
+      `;
+    }
+
+    function cancelcancel() {
+      document.querySelector(".main").innerHTML = `
+            <h1>Premium plus pro</h1>
+            <h1>$6900000/month</h1>
+            <h2>Subscribed</h2>
+            <button onclick="cancel()">Cancel Subscription</button>
+
+        `;
+    }
+  </script>
+</html>
