@@ -1,0 +1,27 @@
+<script>
+// Function to check window width
+function checkWindowWidth() {
+  // Get the width of the window
+  var windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
+  // Check if the window width is less than 768px
+  if (windowWidth < 768) {
+    // Do something if window width is under 768px
+    window.close()
+    // You can perform any action here, such as showing/hiding elements, etc.
+  } else {
+    // Do something else if window width is greater than or equal to 768px
+
+  }
+}
+
+// Call the function when the page loads
+checkWindowWidth();
+
+// Listen for window resize events
+window.addEventListener('resize', function() {
+  // Call the function when the window is resized
+  checkWindowWidth();
+});
+</script>
+<h1>This window is reponsive and responds when it is on a phone</h1
