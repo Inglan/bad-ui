@@ -1,27 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Window</title>
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        height: 100%;
+    }
+    .content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 24px;
+        white-space: nowrap;
+    }
+</style>
+</head>
+<body>
+<div class="content">
+    <p>This window is responsive and will fix itself on different window sizes</p>
+</div>
+
 <script>
-// Function to check window width
-function checkWindowWidth() {
-  // Get the width of the window
-  var windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    window.addEventListener('resize', function() {
+        checkOverflow();
+    });
 
-  // Check if the window width is less than 768px
-  if (windowWidth < 768) {
-    // Do something if window width is under 768px
-    window.close()
-    // You can perform any action here, such as showing/hiding elements, etc.
-  } else {
-    // Do something else if window width is greater than or equal to 768px
+    function checkOverflow() {
+        var content = document.querySelector('.content');
+        if (content.scrollWidth > window.innerWidth || content.scrollHeight > window.innerHeight) {
+            alert("E")
+        }
+    }
 
-  }
-}
-
-// Call the function when the page loads
-checkWindowWidth();
-
-// Listen for window resize events
-window.addEventListener('resize', function() {
-  // Call the function when the window is resized
-  checkWindowWidth();
-});
+    window.onload = function() {
+        checkOverflow();
+    };
 </script>
-<h1>This window is reponsive and responds when it is on a phone</h1
+
+</body>
+</html>
